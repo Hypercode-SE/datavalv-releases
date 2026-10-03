@@ -1,0 +1,7 @@
+commit: 921bc975ff391cd6deb902325458cfe2e79d0614
+configuration: staging
+node: v24.21.0
+node pinned by .nvmrc: 24
+platform: Linux x86_64
+files: 118
+manifest sha256: ef5a96f1f84080102732af5f37fbab8020140526bf43d17a1767cbd9201e6e29
