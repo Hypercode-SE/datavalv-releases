@@ -1,0 +1,7 @@
+commit: 439e627127167c6f1ac07568685ea8aaa8a032e3
+configuration: production
+node: v24.21.0
+node pinned by .nvmrc: 24
+platform: Linux x86_64
+files: 118
+manifest sha256: 2a2bc9be19350120cdbe43d9cb87120280f4f9f64a4e78a674f62a06784214dc
