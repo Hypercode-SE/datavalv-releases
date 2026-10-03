@@ -29,6 +29,25 @@ updated, and `LIVE` is moved only after the update succeeds. A folder `LIVE`
 has never pointed at was published and then not served, because that deploy
 failed.
 
+## Written by the deploy pipeline, never by hand
+
+Everything under `prod/` and `staging/` is the output of Datavalv's automated
+deploy pipeline. When a commit is released, the pipeline builds the web
+application, signs the manifest of what it built, commits the release folder
+here, deploys, and then moves `LIVE`. No release folder, manifest, signature
+or `LIVE` file is ever added, changed or removed by hand. The only commits
+made by hand are to this README.
+
+The pipeline commits as Andréas Kühne, who runs the service and owns the key it
+pushes with, so the author of a commit does not tell the two apart. The
+signature does: only the deploy workflow can produce one that passes the check
+below, because Sigstore issues its certificate to that workflow, on that
+branch, and to nothing else. A release folder whose manifest does not verify
+was not written by the pipeline.
+
+`main` is protected: it cannot be force-pushed or deleted, by anybody, so
+history here is only ever added to.
+
 ## Checking a release
 
 **1. The manifest is ours, and was logged when we say.** Each manifest is
